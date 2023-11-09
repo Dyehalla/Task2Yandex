@@ -27,10 +27,9 @@ class CircleWindow(QMainWindow):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
 
-        color = QColor(255, 255, 0, 100)
-        painter.setBrush(color)
-
         for _ in range(1000):
+            color = QColor(randint(0, 255), randint(0, 255), randint(0, 255), randint(0, 100))
+            painter.setBrush(color)
             pos = QPoint(randint(1, 2000), randint(1, 2000))
             radius = randint(1, 30)
             painter.drawEllipse(pos, radius, radius)
